@@ -34,5 +34,12 @@ e.g:- Suppose we need multi module application consisting of python, mysql, redi
 5. docker compose down
 - Used to remove containers entirely. It wont remove volumes. To remove volumes use --volumes flag
 
+6. docker compose exec service_name mysql bash
+- To access terminal of the container and execute commands inside running container
+
+
+
+  
+
 
 
