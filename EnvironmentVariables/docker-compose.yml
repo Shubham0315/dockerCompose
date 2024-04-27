@@ -1,1 +1,13 @@
-
+services:
+  web:
+    image: "nginx"
+  rcache:
+    image: "redis:${TAG}"
+  db:
+    image: mysql
+    #environment:
+      #- MYSQL_PASS=hello123
+      #- MYSQL_PASS: hello123
+      #- MYSQL_PASS:${PASS}
+    env_file:
+      - mysqlconfig.env
