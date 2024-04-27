@@ -49,6 +49,10 @@ _**Command :- docker volume ls**_  :- Gives Driver and Volume name
 
 _**Command :- docker compose exec serviceName bash**_  :- Go inside nginx service
 
+5. To stop/down containers
+
+_**Command :- docker compose down --volumes**_
+
 
 
 
