@@ -1,1 +1,26 @@
 
+services:
+  web:
+    image: "nginx"
+    ports:
+      - "8081:81"
+    networks:
+      - my_network
+  rcache:
+    image: "redis:${TAG}"
+    #profiles:
+    #  - rediscache
+  db:
+    image: mysql
+    #environment:
+      #- MYSQL_PASS=hello123
+      #- MYSQL_PASS: hello123
+      #- MYSQL_PASS:${PASS}
+    env_file:
+      - mysqlconfig.env
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
