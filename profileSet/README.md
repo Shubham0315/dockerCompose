@@ -31,7 +31,7 @@ _**Command :- docker compose --profile rediscache up -d**_
 - When we try to remove the containers now using "docker compose down --volumes", it throws below error :- Resource Still in use"
   This is due to our network is associated with redis profile as well. So that profile also needs to be passed. Until redis container is running, our network will be there.
 
-  <img width="773" alt="image" src="https://github.com/Shubham0315/dockerCompose/assets/105341138/178f0604-5925-406f-b37c-9f220a430ccd">
+<img width="773" alt="image" src="https://github.com/Shubham0315/dockerCompose/assets/105341138/178f0604-5925-406f-b37c-9f220a430ccd">
 
 
 
