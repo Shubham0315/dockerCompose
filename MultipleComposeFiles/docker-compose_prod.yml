@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+  web:
+    image: "nginx"
+  db:
+    image: mysql
+    environment:
+      - MYSQL_PASS=hello123       
