@@ -18,7 +18,7 @@
 <img width="783" alt="image" src="https://github.com/Shubham0315/dockerCompose/assets/105341138/fdf7bf23-b20e-46e8-ad6f-5ba7386c90b7">
 
 
-# Use Custom Imahe dockerfile within Compose file
+# Use Custom Image dockerfile within Compose file
 
 - Create one simple dockerfile as below
 
