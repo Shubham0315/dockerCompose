@@ -1,6 +1,6 @@
 # Depends On Feature
 
-- This feature is used to set order of container creation and removal (Startpu and Showdown order).
+- This feature is used to set order of container creation and removal (Startup and Shoutdown order).
 - We can make containers dependent on each other.
 
 - Pass the "depends on" tag inside one service and make the service dependent on other services
