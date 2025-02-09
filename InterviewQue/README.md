@@ -130,3 +130,18 @@ How to set profile for a particular service in docker compose
   - Better env management
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Explain how to expose ports in docker compose
+-
+- Exposing ports in docker compos allows external access to services running inside containers. This is done using ports or expose directives in docker-compose.yml
+
+![image](https://github.com/user-attachments/assets/2aa9bef8-1c04-4067-ab99-2b1efc9316d8)
+
+- This means we can access nginx server at http://localhost:8081.
+- Expose makes port available to other containers inside same docker network but doesnt expose it to host. We can connect MySQL on 3306 but its not accessible from host
+
+![image](https://github.com/user-attachments/assets/0177a377-244a-4144-abff-e88000e293b6)
+
+- Use ports to expose services to host machine. Use expose to allow inter container communication only
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
