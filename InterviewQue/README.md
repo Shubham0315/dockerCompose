@@ -145,3 +145,65 @@ Explain how to expose ports in docker compose
 - Use ports to expose services to host machine. Use expose to allow inter container communication only
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to set custom network in docker compose?
+-
+- By default docker compose creates bridge network for all services. However we can define custom network for better control over service communication and security.
+
+- Here, we can define custom network under networks sectiob abd assign services to it
+
+![image](https://github.com/user-attachments/assets/fc645c61-c5fd-437a-9821-eb329c1b272c)
+![image](https://github.com/user-attachments/assets/ba10b7cb-60cc-4b96-a950-cf801637c7ca)
+
+- We can also specify different network drivers and options by defining subnets ranges so that our container remains in that IP range only.
+
+![image](https://github.com/user-attachments/assets/9bb483df-12fa-4dff-9c60-ec9e7d301928)
+
+- To inspect the custom network :- docker network inspect $customNetwork
+
+![image](https://github.com/user-attachments/assets/65398752-d81d-4a0d-9785-b9367840694a)
+
+- Custom networks improve security and service isolation
+- Custom IP ranges help managing internal addressing
+
+- If we dont pass custom network to any of the service, it will create its own default network. So the container will get isolated from other two containers
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Explain depends on feature in docker compose
+-
+- Used to set order of container creation and removal (startup and shutdown order)
+- This feature defines service dependencies ensuring that service starts only after its dependencies are created
+- However it does not wait for dependent service to be ready. It only ensures that dependent container starts before other
+
+- If we've defined 2 services in compose file and inside one service we pass depends_on, it means that service wont start until the other is created
+
+![image](https://github.com/user-attachments/assets/580a4b8d-297d-4770-b31a-9fd506dd75db)
+
+- Here for better control we can use **healthcheck and condition: service_healthy**
+- We can use restart to handle failures
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Explain how we can use multiple compose files
+-
+- Sometimes there is a need of multiple compose files as we work on multiple environments. Also used to override settings
+- Its useful for :- defining base compose file, creating env specific overrides, keeping config modular and avoiding duplication
+
+- By default compose takes docker-compose.yml file into consideration while creating services
+- To run custom compose file, we need to pass -f flag in command
+- Command :- **docker compose -f docker-compose-prod.yml up -d**
+
+![image](https://github.com/user-attachments/assets/82f6cc80-8091-49fd-b7d5-de79649db264)
+
+- By using multiple compose files for diff env, we can keep config separate, use different settings per env, avoid duplication
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Use of custom dockerfile to use in compose file
+-
+- Create custom dockerfile. Define it in compose.yml
+- By this way, it will fetch details of dockerfile from same location or we can provide dockerfile name
+
+![image](https://github.com/user-attachments/assets/d1fca6a8-c52f-4d59-a458-c5d5bb056c0b)
+
