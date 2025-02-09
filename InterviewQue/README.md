@@ -18,3 +18,5 @@ Explain Docker compose with its features
   - **One Command deployment** :- docker compose up -d / down -d
  
 - Docker compose simplifies multi container apps by defining services in single yaml file, managing networks and volumes
+- With single compose command we can create and start all services in our yml file(coonfig)
+- It works in all env like dev, staging, prod, testing
