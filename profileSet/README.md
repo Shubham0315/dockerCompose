@@ -1,6 +1,6 @@
 # Set profiles for Services
 
-- By default all the services defined in yml file are enabled. So when we run "docker-ompose up -d", all services start running.
+- By default all the services defined in yml file are enabled. So when we run "docker-compose up -d", all services start running.
 - But if we want a specific service to be enabled and running only after we provide input, we can set profile to that service/
 
 In below snap, the profile is set for redis service.
